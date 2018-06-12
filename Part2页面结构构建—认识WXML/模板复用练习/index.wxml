@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <!-- <view bindtap='calculate'>计算</view> -->
+  <!-- <text>{{timestamp}}</text>
+<view>{{year}}年{{month}}月{{date}}日</view>
+  <view wx:if="{{day %2== 0 && timestamp > 0}}">{{year}}年{{month}}月{{date}}日</view>
+  <view wx:elif= "{{timestamp>0}}">{{hour}}时{{minute}}分{{second}}秒</view> -->
+
+<!-- 模板复用练习 -->
+<import src="checkboxCus.wxml" />
+<template is="checkboxCus" wx:for = "{{weekItem}}" data="{{checkItem:item}}" wx:key="*this">
+</template>
+ <!-- <checkbox wx:for = "{{weekItem}}" 
+     wx:for-item = "hahaha"
+     wx:key="*this">{{hahaha}}</checkbox>  -->
+
+</view>

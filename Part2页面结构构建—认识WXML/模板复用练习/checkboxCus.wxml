@@ -1,0 +1,3 @@
+<template name = 'checkboxCus'>
+  <checkbox>{{checkItem}}</checkbox>
+</template>
